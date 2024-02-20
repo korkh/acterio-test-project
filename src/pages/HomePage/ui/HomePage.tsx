@@ -1,4 +1,5 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
+import SearchBar from "shared/components/SearchBar/SearchBar";
 
 const HomePage = () => {
   const isSmallScreen = useMediaQuery("(max-width:600px)");
@@ -6,14 +7,8 @@ const HomePage = () => {
 
   return (
     <>
-      <Box
-        position="relative"
-        maxWidth="100%"
-        overflow="hidden"
-        maxHeight="720px"
-      >
-        <Typography
-          variant={isSmallScreen ? "h2" : "h1"}
+       <Typography
+          variant={isSmallScreen ? "h3" : "h2"}
           sx={{
             position: "absolute",
             top: titlePositionTop,
@@ -22,11 +17,11 @@ const HomePage = () => {
             zIndex: 2,
             color: "white",
             fontWeight: "bold",
+            textAlign: "center"
           }}
         >
-          Welcome to Acertio Test Project!
+          Welcome to<br /> <span>Acertio Test Project!</span>
         </Typography>
-      </Box>
     </>
   );
 };

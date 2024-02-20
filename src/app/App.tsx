@@ -39,19 +39,24 @@ function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <ToastContainer position="bottom-right" hideProgressBar theme="colored" />
-      <CssBaseline />
-      <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
+      <Suspense fallback={<Loader />}>
+        <ToastContainer
+          position="bottom-right"
+          hideProgressBar
+          theme="colored"
+        />
+        <CssBaseline />
+        <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
 
-      {location.pathname === "/" ? (
-        <HomePage />
-      ) : (
-        <Container sx={{ mt: 4 }}>
-          <Suspense fallback={<Loader />}>
+        {location.pathname === "/" ? (
+          
+          <HomePage />
+        ) : (
+          <Container sx={{ mt: 4 }}>
             <Outlet />
-          </Suspense>
-        </Container>
-      )}
+          </Container>
+        )}
+      </Suspense>
     </ThemeProvider>
   );
 }
