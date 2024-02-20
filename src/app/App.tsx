@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { Header } from "shared/components/Header";
 import { ThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Container } from "@mui/material";
 import HomePage from "pages/HomePage/ui/HomePage";
+import { Loader } from "shared/components/loader/Loader";
 
 function App() {
   const location = useLocation();
@@ -46,7 +47,9 @@ function App() {
         <HomePage />
       ) : (
         <Container sx={{ mt: 4 }}>
-          <Outlet />
+          <Suspense fallback={<Loader />}>
+            <Outlet />
+          </Suspense>
         </Container>
       )}
     </ThemeProvider>

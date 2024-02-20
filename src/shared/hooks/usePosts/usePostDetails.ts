@@ -4,7 +4,7 @@ import { useAppDispatch } from "app/Providers/StoreProvider/configureStore";
 import {
   selectPost,
   selectPostLoading,
-} from "pages/PostsPage/ui/PostDetailsPage/postDetailsSelectors";
+} from "pages/PostsPage/ui/PostDetailsPage/ui/postDetailsSelectors";
 import { fetchPostAsync } from "entities/Post/model/services/fetchPostAsync/fetchPostAsync";
 
 export default function usePostDetails(postId: string | undefined) {

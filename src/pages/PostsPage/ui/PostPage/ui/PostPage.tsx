@@ -1,7 +1,7 @@
 import { CircularProgress, Grid, Typography } from "@mui/material"; // Import Material-UI components
 import React from "react";
 import usePosts from "shared/hooks/usePosts/usePosts";
-import PostsList from "../PostsList/PostsList";
+import PostsList from "../../PostsList/PostsList";
 
 const PostPage: React.FC = () => {
   const { posts, isLoaded } = usePosts();

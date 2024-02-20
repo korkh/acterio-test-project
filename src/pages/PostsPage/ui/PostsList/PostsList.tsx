@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import { Post } from "entities/Post";
 import usePosts from "shared/hooks/usePosts/usePosts";
 import { PostCardSkeleton } from "../PostCard/ui/PostCardSkeleton/PostCardSkeleton";
-import PostCard from "../PostCard/ui/PostCard/PostCard";
+import PostCard from "../PostCard/ui/PostCard/ui/PostCard";
 
 interface Props {
   posts: Post[];
